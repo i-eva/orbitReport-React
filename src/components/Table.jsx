@@ -10,16 +10,26 @@ const Table = ({ sat }) => {
      </tr>
      </thead>
      <tbody>
-    {/* {displaySats.map((sat, id) => {
+      {sat.map((data, id) => {
         return (
-          <tr onClick={() => fileterByType(sat)} key={id}>
-            <td>{sat.name}</td>
-            <td>{sat.type}</td>
-            <td>{sat.launchDate}</td>
-            <td>{sat.operational}</td>
+          <tr key={id}>
+            <td>{data.name}</td>
+            <td>{data.type}</td>
+            <td>{data.launchDate}</td>
+            {function activeOrInactive(data) {
+              const activity = data.operational;
+              if(activity) {
+                return(
+                  <td>active</td>
+                );
+              }
+              return(
+                <td>inactive</td>
+              );
+            }}
           </tr>
          );
-      })} */}
+      })}
      </tbody>
    </table>
   );
