@@ -1,4 +1,15 @@
 const Table = ({ sat }) => {
+  function activeOrInactive(data) {
+    const activity = data.operational;
+    if(activity) {
+      return(
+        "active"
+      );
+    }
+      return(
+        "inactive"
+      );
+}
   return (
     <table>
     <thead>
@@ -10,19 +21,8 @@ const Table = ({ sat }) => {
      </tr>
      </thead>
      <tbody>
-
       {sat.map((data, id) => {
-             function activeOrInactive(data) {
-              const activity = data.operational;
-              if(activity) {
-                return(
-                  "active"
-                );
-              }
-                return(
-                  "inactive"
-                );
-       }
+        console.log(id);
         return (
           <tr key={id}>
             <td>{data.name}</td>

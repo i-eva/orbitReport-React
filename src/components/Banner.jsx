@@ -1,9 +1,9 @@
-import styling from "./styling.css";
+import "./styling.css";
 export default function Banner() {
     return(
-        <div className = "h1, p">
+        <header>
             <h1>Orbit Report</h1>
             <p>Select an orbit button to see satellites</p>
-        </div>
+        </header>
     );
 }
